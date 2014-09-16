@@ -6,11 +6,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import controller.controller;
 
 
 
 
 public class Random extends Activity {
+
+    controller controller = new controller();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +45,7 @@ public class Random extends Activity {
 
         TextView tv = (TextView)findViewById(R.id.randTextView);
 
-        java.util.Random randGen = new java.util.Random();
-        int randomInt = randGen.nextInt(101);
+        tv.setText(controller.setRandom());
 
-        String a = Integer.toString(randomInt);
-
-        tv.setText(a);
     }
 }
